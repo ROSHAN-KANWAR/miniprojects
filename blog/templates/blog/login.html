@@ -1,0 +1,18 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block title %}
+Login
+{% endblock title %}
+{% block content %}
+<div class="col-sm-10">
+    <h3 class="my-5 font-weight-bold">Login Page</h3>
+   {{form.as_p}}
+   <input type="submit" value="Login" class="btn btn-primary">
+
+{% if form.non_field_errors %}
+ {% for error in form.non_field_errors %}
+ <p>{{error}}</p>
+ {% endfor %}
+ {% endif %}
+
+{% endblock content %}
